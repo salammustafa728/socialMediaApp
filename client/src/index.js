@@ -6,20 +6,28 @@ import { createStore, applyMiddleware,compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 import { ThemeProvider } from "@mui/styles";
-const theme = {
-  spacing: 4,
-  palette: {
-    primary: "#007bff"
-  }
-};
+import { createTheme } from '@mui/material/styles';
+const theme =createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 root.render(
   <Provider store={store}>
-  {/* <ThemeProvider theme={theme}> */}
+
   <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
+    </ThemeProvider>
   </React.StrictMode>
-  {/* </ThemeProvider> */}
+ 
   </Provider>
 );

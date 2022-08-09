@@ -7,6 +7,9 @@ import useStyles from "./styles";
 import { useDispatch } from "react-redux";
 import { getPosts } from './actions/post';
 
+
+
+
 const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -29,8 +32,9 @@ const App = () => {
           height="60"
         />
       </AppBar>
-
+    
       <Grow in>
+         
         <Container>
           <Grid
             container
