@@ -14,9 +14,11 @@ app.use(cors());
 
 app.use('/posts',postRoutes);
 
+//basic route
 app.use('/',(req,res)=>{
     res.send('Hello to memories API');
 })
+//make Proc
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 //'mongodb+srv://salammustafa728:root@cluster0.t6y17nj.mongodb.net/?retryWrites=true&w=majority';
