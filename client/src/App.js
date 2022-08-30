@@ -36,11 +36,12 @@ const App = () => {
     
       <Grow in>
          
-        <Container>
+        <Container  >
           <Grid
+           className={classes.mainContainer}
             container
-            justifyContent="space-between"
-            alignItems="center"
+            justify="space-between"
+            alignItems="stretch"
             spacing={3}
           >
             <Grid item xs={12} sm={7}>
